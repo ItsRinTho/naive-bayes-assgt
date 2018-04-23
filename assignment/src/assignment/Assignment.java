@@ -18,6 +18,8 @@ public class Assignment {
         
         NaiveBayes naiveBayes = new NaiveBayes();
         Evaluation eval = new Evaluation(data);
+        
+        naiveBayes.buildClassifier(data);
         eval.crossValidateModel(naiveBayes, data, 10, new Random(1));
         
         System.out.println(eval.toSummaryString());
